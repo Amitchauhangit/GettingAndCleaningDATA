@@ -1,18 +1,17 @@
 setwd("C:/Users/Dragon/Desktop/UCI HAR Dataset/") #setting Location of DataSet directory
 
 #reading train and test datasets
-#train dataset reading 
+#train datasets
 xtrain<-read.table("./train/X_train.txt")
 ytrain<-read.table("./train/y_train.txt")
 subject_train<-read.table("./train/subject_train.txt")
-#test dataset reading
+#test datasets
 xtest<-read.table("./test/X_test.txt")
 ytest<-read.table("./test/y_test.txt")
 subject_test<-read.table("./test/subject_test.txt")
 
-#allFeatures contain all the features from mentioned in the dataset.
+#allFeatures contain all the names for the variables mentioned in the dataset.
 allFeatures<-read.table("./features.txt")
-
 
 #Merging the training and the test sets to create one data set named wholeDataSet.
 wholeDataSet<-rbind(cbind(subject_train,ytrain,xtrain),cbind(subject_test,ytest,xtest))
@@ -67,11 +66,8 @@ tempMeanTogether<-data.frame(lapply(meansColWise,unclass)) #dim(temp) = (66, 180
                      
 targetAverageDataSet<-cbind(tempFrame,t(tempMeanTogether))
 #final step to combine the tempFrame and tempMeanTogether into a single data frame.
-#targetAverageDataSet is the asked dataset.
+#targetAverageDataSet is the asked dataset.  
 
-write.table(targetDataSet,file="tidyDataSet.txt",row.names = F) #step 4 dataset writing
-write.table(targetAverageDataSet,file="IndividualAveragesDataSet.txt",row.names = F) # step 5 dataset
-
-
-
-
+write.table(targetDataSet,file="tidyDataSet.txt",row.names = F) #writing dataset targetDataSet 
+write.table(targetAverageDataSet,file="IndividualAveragesDataSet.txt",row.names = F) #writing dataset targetAverageDataSet
+#end of script
