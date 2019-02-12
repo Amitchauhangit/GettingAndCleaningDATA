@@ -2,16 +2,16 @@ setwd("C:/Users/Dragon/Desktop/UCI HAR Dataset/") #setting Location of DataSet d
 
 #reading train and test datasets
 #train datasets
-xtrain<-read.table("./train/X_train.txt")
-ytrain<-read.table("./train/y_train.txt")
-subject_train<-read.table("./train/subject_train.txt")
+xtrain<-read.table("./UCI HAR Dataset/train/X_train.txt")
+ytrain<-read.table("./UCI HAR Dataset/train/y_train.txt")
+subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt")
 #test datasets
-xtest<-read.table("./test/X_test.txt")
-ytest<-read.table("./test/y_test.txt")
-subject_test<-read.table("./test/subject_test.txt")
+xtest<-read.table("./UCI HAR Dataset/test/X_test.txt")
+ytest<-read.table("./UCI HAR Dataset/test/y_test.txt")
+subject_test<-read.table("./UCI HAR Dataset/test/subject_test.txt")
 
 #allFeatures contain all the names for the variables mentioned in the dataset.
-allFeatures<-read.table("./features.txt")
+allFeatures<-read.table("./UCI HAR Dataset/features.txt")
 
 #Merging the training and the test sets to create one data set named wholeDataSet.
 wholeDataSet<-rbind(cbind(subject_train,ytrain,xtrain),cbind(subject_test,ytest,xtest))
@@ -40,7 +40,7 @@ names(targetDataSet)<-c("Subject","Activity",features)
 targetDataSet<-targetDataSet[order(targetDataSet$Subject,targetDataSet$Activity),]
 #ordering the targetDataSet according to subject and then according to activity in ascending order.
 
-activityLabels<-read.table("./activity_labels.txt")
+activityLabels<-read.table("./UCI HAR Dataset/activity_labels.txt")
 activity<-factor(x = activityLabels[[2]],levels = activityLabels[[2]])
 #getting activity names equivalent to there id in 1 to 6 and creating a factor named activity
 
