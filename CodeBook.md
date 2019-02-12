@@ -23,7 +23,7 @@ These signals were used to estimate variables of the feature vector for each pat
          
 ## Variable Description
 
-###(Total number of features/variables present in the Tidy Dataset (IndividualAveragesDataset) = 68.)
+### (Total number of features/variables present in the Tidy Dataset (IndividualAveragesDataset) = 68.)
 
 #### 1						  Subject
                 The Id of the person who were observed . It ranges from [1,30]
