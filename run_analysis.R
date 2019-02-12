@@ -1,4 +1,4 @@
-setwd("C:/Users/Dragon/Desktop/UCI HAR Dataset/") #setting Location of DataSet directory
+setwd("C:/Users/Dragon/Desktop/") #setting Location of directory that contain samsung dataset ("UCI HAR Dataset")
 
 #reading train and test datasets
 #train datasets
