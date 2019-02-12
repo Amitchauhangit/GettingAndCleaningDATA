@@ -20,8 +20,8 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 
-variable         
- Number      Description
+#variable         
+# Number\t\t      Description\n
 1						  Subject
                 The Id of the person who were observed . It ranges from [1,30]
 2						  Activity
